@@ -1,0 +1,102 @@
+body{
+    background-color: rgb(15, 54, 61);
+    padding: 0;
+    margin: 0;
+}
+.container{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    gap:10px;
+}
+.new_todo{
+    background-color: rgb(100, 84, 116);
+    border-radius: 10px;
+    margin-top: 100px;
+    height: 100px;
+    padding: 20px;
+    width: 600px;
+}
+.new_todo input{
+    height: 30px;
+    width: 300px;
+}
+.add_button{
+    background-color: cadetblue;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    height: 35px;
+    width: 100px;
+}
+.add_button:hover{
+    opacity: 0.75;
+}
+.new_todo p{
+    font-weight: bolder;
+    font-size: large;
+}
+#todos{
+    flex-direction: column;
+    display: flex;
+    gap:10px;
+}
+#todos .todo_item {
+    background-color: rgb(60, 51, 112);
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 100px;
+    display: flex;
+    width: 600px;
+    gap: 10px;
+} 
+
+.text {
+    background-color: azure;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 30px;
+    width: 300px;
+}
+
+.edit {
+    background-color: rgb(64, 105, 153);
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.delete {
+    background-color: rgb(62, 153, 148);
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.edit_container {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}  
+
+.edit_container button{
+    background-color: rgb(36, 148, 192);
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    height: 30px;
+    width: 70px;
+}
+
+.edit_container button:hover{
+    opacity: 0.75;
+}
+
+.edit_container input{
+    height: 30px;
+    width: 300px;
+}
+
