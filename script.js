@@ -2,6 +2,9 @@
 const todoContainer = document.getElementById("todos");
 const Todo_text = document.getElementById("input_text");
 
+
+document.addEventListener('DOMContentLoaded', loadTodos);
+
 //*****POST*****//
 
 function Add_todo() {
@@ -30,7 +33,7 @@ function Add_todo() {
       <button class="delete" onclick="Delete_todo('${todoId}')">🗑️</button>
     `;
     todoContainer.appendChild(new_todo);
-    todoValue = '';
+    Todo_text.value = ""; 
   })
   .catch(error => console.error('Error:', error));
 }
@@ -106,3 +109,23 @@ const Edit_todo = (todo_Id) => {
   };
 }
 
+function loadTodos(){
+
+fetch('http://127.0.0.1:3000')
+.then(response => response.json())
+.then (data => {
+  data.forEach(todo =>{
+    const new_todo = document.createElement("div");
+    new_todo.classList.add("todo_item");
+    new_todo.id = todo.id;
+    new_todo.innerHTML = `
+        <div id="text_${todo.id}" class="text">${todo.todo}</div>
+        <button class="edit" onclick="Edit_todo('${todo.id}')">✎</button>
+        <button class="delete" onclick="Delete_todo('${todo.id}')">🗑️</button>
+    `;
+    todoContainer.appendChild(new_todo);
+    Todo_text.value = "";
+  })
+})
+.catch(error => console.error('Error:',error));
+}

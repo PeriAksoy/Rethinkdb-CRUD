@@ -18,7 +18,12 @@ app.use(cors());
 
 //POST
 app.post("/",async (req,res) =>{
-    const todoItem=req.body;
+    let todoItem=req.body;
+    const id = await r.uuid();
+    todoItem = {
+        ...todoItem,
+        id: id
+        }
     await r.db("Todo_list").table("Todos").insert(todoItem).run();
     res.send(todoItem);
 });
