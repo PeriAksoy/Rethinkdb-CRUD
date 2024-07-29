@@ -13,7 +13,7 @@ const r = require('rethinkdbdash')({
 
 var app = express();
 
-app.use(bodyParser.json())
+app.use(express.json())
 app.use(cors());
 
 //POST

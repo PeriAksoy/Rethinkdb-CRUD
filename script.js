@@ -100,7 +100,6 @@ const Edit_todo = (todo_Id) => {
   })
   .catch(error => console.error("Error:", error));
   };
- 
 }
 
 function loadTodos(){
@@ -108,6 +107,7 @@ function loadTodos(){
 fetch('http://127.0.0.1:3000')
 .then(response => response.json())
 .then (data => {
+  todoContainer.innerHTML="";
   data.forEach(todo =>{
     const new_todo = document.createElement("div");
     new_todo.classList.add("todo_item");
